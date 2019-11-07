@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+#copy over all our source code to the container
+COPY . .
+
+CMD ["npm", "run", "start"]
